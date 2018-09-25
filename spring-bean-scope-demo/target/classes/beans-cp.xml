@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="myorg" class="com.tagore.springdemo.domain.Organization"
+		scope="prototype">
+		<constructor-arg value="Amazon" name="companyName"></constructor-arg>
+		<constructor-arg value="1994"
+			name="yearOfIncorporation"></constructor-arg>
+		<property name="postalCode" value="560059"></property>
+		<property name="employeeCount" value="10000"></property>
+
+		<property name="slogan"
+			value="Work hard, have fun, make history">
+		</property>
+		<property name="businessService" ref="ecommerceService"></property>
+	</bean>
+	<bean id="cloudService"
+		class="com.tagore.springdemo.serviceimpl.CloudServiceImpl">
+	</bean>
+	<bean id="ecommerceService"
+		class="com.tagore.springdemo.serviceimpl.EcommerceServiceImpl">
+	</bean>
+</beans>
